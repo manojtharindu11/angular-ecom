@@ -1,7 +1,7 @@
-import { CartService } from './../../../services/cart.service';
+import { CartService } from '../../services/cart.service';
 import { Component, inject, input } from '@angular/core';
-import { Product } from '../../../models/product.models';
-import { PrimaryButtonComponent } from '../../../components/primary-button/primary-button.component';
+import { Product } from '../../models/product.models';
+import { PrimaryButtonComponent } from '../primary-button/primary-button.component';
 
 @Component({
   selector: 'app-product-card',
