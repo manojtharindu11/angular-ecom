@@ -1,13 +1,14 @@
 import { Component, signal } from '@angular/core';
 import { Product } from '../../models/product.models';
+import { ProductCardComponent } from './product-card/product-card.component';
 
 @Component({
   selector: 'app-product-list',
-  imports: [],
+  imports: [ProductCardComponent],
   template: `
     <div class="p-8 grid grid-cols-2 gap-4">
       @for (product of products(); track product.id) {
-      <div>{{ product.title }}</div>
+      <app-product-card [product]="product" />
       }
     </div>
   `,
@@ -27,7 +28,7 @@ export class ProductListComponent {
       title: 'Smartphone Stand',
       image: 'https://picsum.photos/200/300?random=2',
       price: 12.99,
-      stock: 100,
+      stock: 0,
     },
     {
       id: 3,
