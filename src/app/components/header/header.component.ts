@@ -1,13 +1,24 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { PrimaryButtonComponent } from '../primary-button/primary-button.component';
 
 @Component({
   selector: 'app-header',
   imports: [PrimaryButtonComponent],
-  template: `<div class="bg-slate-100 px-4 py-3 shadow-md flex justify-between">
-    <span>Store</span>
-    <app-primary-button label="Cart" />
+  template: `<div
+    class="bg-slate-100 px-4 py-3 shadow-md flex justify-between items-center"
+  >
+    <span class="text-xl">Store</span>
+    <app-primary-button
+      [label]="cart()"
+      (buttonClicked)="showButtonClicked()"
+    />
   </div>`,
   styles: '',
 })
-export class HeaderComponent {}
+export class HeaderComponent {
+  cart = signal('Cart');
+
+  showButtonClicked() {
+    console.log('Clicked');
+  }
+}
