@@ -14,7 +14,7 @@ import { CartService } from '../../services/cart.service';
       <span class="text-md font-bold">{{ item().title }}</span>
       <span class="text-sm">{{ '$ ' + item().price }}</span>
     </div>
-    <div class="flex-1">
+    <div class="ml-auto">
       <app-button
         label="Remove"
         (buttonClicked)="cartService.removeFromCart(item().id)"

@@ -5,22 +5,7 @@ import { Injectable, signal } from '@angular/core';
   providedIn: 'root',
 })
 export class CartService {
-  cart = signal<Product[]>([
-    {
-      id: 1,
-      title: 'Wireless Earbuds',
-      image: 'https://picsum.photos/200/300?random=1',
-      price: 29.99,
-      stock: 50,
-    },
-    {
-      id: 2,
-      title: 'Smartphone Stand',
-      image: 'https://picsum.photos/200/300?random=2',
-      price: 12.99,
-      stock: 0,
-    },
-  ]);
+  cart = signal<Product[]>([]);
 
   addToCart(product: Product) {
     this.cart.set([...this.cart(), product]);

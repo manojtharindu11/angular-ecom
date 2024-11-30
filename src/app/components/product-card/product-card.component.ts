@@ -10,7 +10,7 @@ import { PrimaryButtonComponent } from '../primary-button/primary-button.compone
     <div
       class="bg-white shadow-md border rounded-xl p-6 flex flex-col relative"
     >
-      <div class="mx-auto">
+      <div>
         <img
           [src]="product().image"
           class="w-[200px] h-[100px] object-contain"
