@@ -8,6 +8,6 @@ export class CartService {
   cart = signal<Product[]>([]);
 
   addToCart(product: Product) {
-    this.cart.set([...this.cart(), product]);
+    this.cart().push(product);
   }
 }

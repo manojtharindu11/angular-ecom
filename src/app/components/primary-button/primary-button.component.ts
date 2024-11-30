@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 
 @Component({
   selector: 'app-primary-button',
@@ -7,11 +7,11 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
     class="bg-blue-500 text-white w-full border px-5 py-2 rounded-xl shadow-md hover:opacity-90"
     (click)="buttonClicked.emit()"
   >
-    {{ label }}
+    {{ label() }}
   </button>`,
   styles: ``,
 })
 export class PrimaryButtonComponent {
-  @Input() label: string = '';
-  @Output() buttonClicked = new EventEmitter<void>();
+  label = input();
+  buttonClicked = output();
 }
